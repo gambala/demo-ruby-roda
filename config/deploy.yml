@@ -1,0 +1,16 @@
+service: demo-ruby-roda
+image: gambala/demo-ruby-roda
+servers:
+  - <%= ENV["MAIN_SERVER_IP"] %>
+labels:
+  traefik.http.routers.demo-ruby-roda-web.rule: Host(`roda.gambala.pro`)
+registry:
+  server: ghcr.io
+  username: gambala
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+healthcheck:
+  interval: 10s
+  path: /
+builder:
+  multiarch: false

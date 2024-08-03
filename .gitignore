@@ -1,3 +1,13 @@
 /log/*
+/tmp/*
+/tmp/pids/*
 
 !/log/.keep
+!/tmp/.keep
+!/tmp/pids/
+!/tmp/pids/.keep
+
+# Ignore all environment files (except templates).
+/.env
+/.env*.local
+!/.env*.erb
