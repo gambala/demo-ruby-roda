@@ -1,16 +1,20 @@
+<% require "dotenv"; Dotenv.load(".env") %>
+
 service: demo-ruby-roda
 image: gambala/demo-ruby-roda
 servers:
   - <%= ENV["MAIN_SERVER_IP"] %>
-labels:
-  traefik.http.routers.demo-ruby-roda-web.rule: Host(`roda.gambala.pro`)
+proxy:
+  ssl: false
+  host: roda.gambala.pro
+  app_port: 3000
+  healthcheck:
+    interval: 10
+    path: /
 registry:
   server: ghcr.io
   username: gambala
   password:
     - KAMAL_REGISTRY_PASSWORD
-healthcheck:
-  interval: 10s
-  path: /
 builder:
-  multiarch: false
+  arch: arm64
