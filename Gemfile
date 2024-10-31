@@ -2,5 +2,5 @@
 
 source "https://rubygems.org"
 
-gem "puma"
+gem "iodine"
 gem "roda"

@@ -58,4 +58,4 @@ ENV LD_PRELOAD="libjemalloc.so.2" \
 EXPOSE 3000
 
 # Set the entrypoint to run Puma
-CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
+CMD ["bundle", "exec", "iodine", "-p", "3000"]

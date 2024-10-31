@@ -1,9 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    nio4r (2.7.3)
-    puma (6.4.2)
-      nio4r (~> 2.0)
+    iodine (0.7.58)
     rack (3.1.7)
     roda (3.82.0)
       rack
@@ -13,7 +11,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  puma
+  iodine
   roda
 
 BUNDLED WITH
