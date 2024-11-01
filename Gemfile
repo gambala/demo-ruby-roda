@@ -2,13 +2,18 @@
 
 source "https://rubygems.org"
 
-gem "erubi"
+# Framework & Server
 gem "iodine"
 gem "roda"
+
+# Database
 gem "sequel"
 gem "sqlite3"
+
+# Rendering
+gem "erubi"
 gem "tilt"
 
 group :development do
-  gem "auto_reloader"
+  gem "auto_reloader" # Code auto-reloading
 end
