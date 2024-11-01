@@ -1,10 +1,17 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    bigdecimal (3.1.8)
     iodine (0.7.58)
+    mini_portile2 (2.8.7)
     rack (3.1.7)
     roda (3.82.0)
       rack
+    sequel (5.85.0)
+      bigdecimal
+    sqlite3 (2.2.0)
+      mini_portile2 (~> 2.8.0)
+    sqlite3 (2.2.0-arm64-darwin)
     tilt (2.4.0)
 
 PLATFORMS
@@ -14,6 +21,8 @@ PLATFORMS
 DEPENDENCIES
   iodine
   roda
+  sequel
+  sqlite3
   tilt
 
 BUNDLED WITH

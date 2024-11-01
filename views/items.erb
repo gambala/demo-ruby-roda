@@ -1,0 +1,9 @@
+<h1>Items: <%= count %> </h1>
+<p>Average price: <%= avg_price %> </p>
+<ul>
+  <% items.each do |item| %>
+    <li>
+      <%= item[:id] %>) <b><%= item[:name] %></b> <code><%= item[:price] %></code>
+    </li>
+  <% end %>
+</ul>
