@@ -2,6 +2,7 @@
 
 source "https://rubygems.org"
 
+gem "erubi"
 gem "iodine"
 gem "roda"
 gem "sequel"

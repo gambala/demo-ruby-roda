@@ -15,7 +15,7 @@ items.insert(name: 'ghi', price: rand * 100)
 
 class App < Roda
   plugin :common_logger, $stdout
-  plugin :render
+  plugin :render, engine: 'erubi'
 
   route do |r|
     r.root do
