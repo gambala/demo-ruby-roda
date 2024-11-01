@@ -8,3 +8,7 @@ gem "roda"
 gem "sequel"
 gem "sqlite3"
 gem "tilt"
+
+group :development do
+  gem "auto_reloader"
+end

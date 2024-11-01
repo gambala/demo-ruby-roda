@@ -22,7 +22,7 @@ RUN apk add --no-cache build-base git gcompat
 COPY --link Gemfile Gemfile.lock ./
 
 # Install gems
-RUN bundle install && \
+RUN bundle install --without development test && \
     rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git
 
 # Copy the rest of the application code
