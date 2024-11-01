@@ -5,6 +5,12 @@ ID_FILE=.container_id
 dev:
 	RACK_ENV=development bundle exec iodine -p 3000 -w 1 -t 4
 
+lint-fix:
+	standardrb --fix
+
+lint-fix-all:
+	standardrb --fix-unsafely
+
 docker-build:
 	docker build -t $(CONTAINER_NAME) .
 

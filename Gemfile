@@ -16,4 +16,5 @@ gem "tilt"
 
 group :development do
   gem "auto_reloader" # Code auto-reloading
+  gem "standard"
 end
