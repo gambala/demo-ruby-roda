@@ -1,5 +1,5 @@
 # Use the official Ruby image as a base image
-ARG RUBY_VERSION=3.2.2
+ARG RUBY_VERSION=3.3.5
 FROM ruby:$RUBY_VERSION-alpine AS base
 
 # Set environment variables
