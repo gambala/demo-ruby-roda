@@ -42,7 +42,7 @@ ARG UID=1000
 ARG GID=1000
 RUN addgroup --system --gid $GID rails && \
     adduser --system rails --uid $UID --ingroup rails --home /home/rails --shell /bin/sh rails && \
-    chown -R rails:rails tmp
+    chown -R rails:rails tmp storage
 USER rails:rails
 
 # Deployment options

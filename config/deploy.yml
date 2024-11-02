@@ -1,4 +1,4 @@
-<% require "dotenv"; Dotenv.load(".env") %>
+# <% require "dotenv"; Dotenv.load(".env") %>
 
 service: demo-ruby-roda
 image: gambala/demo-ruby-roda
@@ -16,6 +16,8 @@ registry:
   username: gambala
   password:
     - KAMAL_REGISTRY_PASSWORD
+volumes:
+  - "demo-ruby-roda-storage:/rails/storage"
 builder:
   arch: arm64
 env:

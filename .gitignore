@@ -1,6 +1,8 @@
+/storage/*
 /tmp/*
 /tmp/pids/*
 
+!/storage/.keep
 !/tmp/.keep
 !/tmp/pids/
 !/tmp/pids/.keep
