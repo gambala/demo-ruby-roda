@@ -23,3 +23,7 @@ builder:
 env:
   RAILS_MAX_THREADS: 2
   WEB_CONCURRENCY: 1
+aliases:
+  console: app exec --interactive --reuse "bundle exec irb -r ./app"
+  shell: app exec --interactive --reuse "sh"
+  logs: app logs -f
