@@ -11,3 +11,6 @@
 /.env
 /.env*.local
 !/.env*.erb
+
+# Ignore all AI-related docs.
+/docs/*
