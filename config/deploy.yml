@@ -21,7 +21,7 @@ volumes:
 builder:
   arch: arm64
 env:
-  RAILS_MAX_THREADS: 2
+  THREADS: 1
   WEB_CONCURRENCY: 1
   LITESTACK_DATA_PATH: /rails/storage
 aliases:
