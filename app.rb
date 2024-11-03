@@ -1,6 +1,7 @@
 require "roda"
 require "json"
 require "sequel"
+require_relative "lib/cache"
 
 DB = Sequel.sqlite('storage/database_file.sqlite3')
 unless DB.table_exists?(:items)
@@ -14,6 +15,8 @@ unless DB.table_exists?(:items)
     items.insert(name: "item_#{i}", price: rand * 100)
   end
 end
+
+CACHE = Cache.new(path: ":memory:")
 
 class App < Roda
   plugin :common_logger, $stdout
@@ -36,7 +39,11 @@ class App < Roda
 
     r.get "items" do
       items = DB[:items]
-      view "items", locals: {items: items.order(Sequel.function(:RANDOM)).limit(5).all, count: items.count, avg_price: items.avg(:price)}
+      scoped_items = items.order(Sequel.function(:RANDOM)).limit(5).all
+      cache_path = scoped_items.map { |item| item[:id] }.join("-")
+      CACHE.fetch(cache_path) do
+        view "items", locals: {items: scoped_items, count: items.count, avg_price: items.avg(:price)}
+      end
     end
   end
 end

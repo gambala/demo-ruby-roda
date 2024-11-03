@@ -7,6 +7,7 @@ gem "iodine"
 gem "roda"
 
 # Database
+gem "litestack"
 gem "sequel"
 gem "sqlite3"
 
