@@ -3,7 +3,7 @@
 source "https://rubygems.org"
 
 # Framework & Server
-gem "iodine"
+gem "iodine", github: "boazsegev/iodine"
 gem "roda"
 
 # Database
