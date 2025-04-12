@@ -9,7 +9,12 @@ FROM ruby:$RUBY_VERSION-alpine AS base
 
 
 FROM base AS build
-  RUN apk add --no-cache build-base git
+  # Install packages needed to build gems and assets
+  # - build-base: for compiling native extensions
+  # - git: for installing gems from git repositories
+  # - pkgconfig: for compiling sqlite
+  RUN apk add --no-cache build-base git pkgconfig
+
   COPY --link Gemfile Gemfile.lock ./
   RUN bundle install --without development test && \
       rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git
