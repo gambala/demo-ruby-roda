@@ -9,7 +9,6 @@ proxy:
   host: roda.gambala.pro
   app_port: 3000
   healthcheck:
-    interval: 10
     path: /
 registry:
   server: ghcr.io
